@@ -7,10 +7,11 @@ function concatFirstDiagonal(twoDimArray) {
     // your code goes here
     let result = '';
     for(let r = 0; r < twoDimArray.length; r++) {
-        let arr = twoDimArray[r];
-        for(let c = 0; c < twoDimArray.length; c++) {
+      for(let c = 0; c < twoDimArray[r].length; c++) {
+        if(r == c) {
+          result += twoDimArray[r][c];
         }
-        result += arr[r];
+      }
     }
     return result;
 }
