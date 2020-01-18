@@ -41,12 +41,13 @@ function concatSecondDiagonal(twoDimArray) {
     let result = '';
     for (let r = 0; r < twoDimArray.length; r++) {
       for (let c = twoDimArray[r].length - 1; c >= 0; c--) {
-        if (r === c)
+        if (r === c) {
           result += twoDimArray[r][twoDimArray.length - (r + 1)];
+        }
       }
     }
     return result;
-}
+  }
 
 // If given the following array, here is the result you should expect:
 
