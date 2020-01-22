@@ -9,4 +9,20 @@
 // Invalid characters should be ignored.
 
 // Return the output array, and ignore all non-op characters
+function parse(data) {
+    let result = [];
 
+  data.split('').reduce((char, s) => {
+    if (s === 'i') char++;
+    if (s === 'd') char--;
+    if (s === 's') char = Math.pow(char, 2); //I would've done char *= char;
+    if (s === 'o') result.push(char);
+    
+    return char;
+  }, 0);
+  
+  return result;
+
+}
+
+console.log(parse("iiisdoso")); // => [ 8, 64 ]
