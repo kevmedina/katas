@@ -25,3 +25,10 @@ function digital_root(n) {
   console.log(digital_root(132189)); // 1 + 3 + 2 + 1 + 8 + 9 = 24, 2 + 4 = 6
   console.log(digital_root(493193)); // 4 + 9 + 3 + 1 + 9 + 3 = 29, 2 + 9 = 11, 1 + 1 = 2
   
+
+//other solution=============================================
+function digital_rootB(n) {
+    return (n - 1) % 9 + 1;
+  }
+  
+  console.log('Soultion 2: ', digital_rootB(942)); // 9 + 4 + 2 = 15, 1 + 5 = 6
