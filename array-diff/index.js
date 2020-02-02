@@ -7,8 +7,16 @@
 
 // array_diff([1,2],[1]) == [2]
 
-function arrayDiff() {
+function arrayDiff(a,b) {
+    let difArray = []
 
+  for ( let i = 0; i < a.length; i++) {
+      let elem = a[i]
+      if (b.indexOf(elem) === -1 ){
+       difArray.push(elem)
+      }
+  }
+  return difArray;
 }
 
-console.log(arrayDiff([1,2],[1]));
+console.log(arrayDiff([1,2,4,3,6,1],[1,3,4]));
