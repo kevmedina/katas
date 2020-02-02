@@ -8,15 +8,20 @@
 // array_diff([1,2],[1]) == [2]
 
 function arrayDiff(a,b) {
-    let difArray = []
+  // Solution 1
+//   let difArray = []
 
-  for ( let i = 0; i < a.length; i++) {
-      let elem = a[i]
-      if (b.indexOf(elem) === -1 ){
-       difArray.push(elem)
-      }
-  }
-  return difArray;
+//   for ( let i = 0; i < a.length; i++) {
+//       let elem = a[i]
+//       if (b.indexOf(elem) === -1 ){
+//        difArray.push(elem)
+//       }
+//   }
+//   return difArray;
+
+  // Solution 2
+  return a.filter(function(x) { return b.indexOf(x) == -1; });
+
 }
 
 console.log(arrayDiff([1,2,4,3,6,1],[1,3,4]));
