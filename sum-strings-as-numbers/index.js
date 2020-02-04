@@ -6,25 +6,37 @@
 // A string representation of an integer will contain no characters besides the ten numerals "0" to "9".
 
 function sumStrings(a, b) {
-    // Solution 1
-  let num1 = a.replace(/^0*/g, "").split("").reverse()
-  let num2 = b.replace(/^0*/g, "").split("").reverse()
-  let spillOver = 0 
-  let counter = 0 
-  let sum = ""
+// Solution 1
+//   let num1 = a.replace(/^0*/g, "").split("").reverse()
+//   let num2 = b.replace(/^0*/g, "").split("").reverse()
+//   let spillOver = 0 
+//   let counter = 0 
+//   let sum = ""
   
-  while(counter < num1.length || counter < num2.length){
-    let tempSum = (parseInt(num1[counter]) || 0) + (parseInt(num2[counter]) || 0) + spillOver
-    if(tempSum > 9){
-      sum = `${tempSum - 10}` + sum 
-      spillOver = 1 
-    } else {
-      sum = `${tempSum}` + sum
-      spillOver = 0 
-    }
-    counter++
+//   while(counter < num1.length || counter < num2.length){
+//     let tempSum = (parseInt(num1[counter]) || 0) + (parseInt(num2[counter]) || 0) + spillOver
+//     if(tempSum > 9){
+//       sum = `${tempSum - 10}` + sum 
+//       spillOver = 1 
+//     } else {
+//       sum = `${tempSum}` + sum
+//       spillOver = 0 
+//     }
+//     counter++
+//   }
+//   return spillOver ? `1${sum}` : sum
+
+
+//   Solution 2
+  let res = '', c = 0;
+  a = a.split('');
+  b = b.split('');
+  while (a.length || b.length || c) {
+    c += ~~a.pop() + ~~b.pop();
+    res = c % 10 + res;
+    c = c > 9;
   }
-  return spillOver ? `1${sum}` : sum
+  return res.replace(/^0+/, '');
 }
 
 console.log(sumStrings('1', '2'));
