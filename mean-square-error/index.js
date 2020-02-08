@@ -11,13 +11,18 @@
 
 const solution = function(firstArray, secondArray) {
     // Solution 1
-    let absDiff =  firstArray.map((elem, i) => {
-        return Math.pow(Math.abs(elem - secondArray[i]), 2);
-    })
-    let sum = absDiff.reduce((prev, current) => {
-        return prev + current;
-    })
-    return sum/absDiff.length;
+    // let absDiff =  firstArray.map((elem, i) => {
+    //     return Math.pow(Math.abs(elem - secondArray[i]), 2);
+    // })
+    // let sum = absDiff.reduce((prev, current) => {
+    //     return prev + current;
+    // })
+    // return sum/absDiff.length;
+
+    // Solution 2
+    return a.reduce(function(s, n, i) { 
+        return s + Math.pow(n - b[i], 2) 
+    }, 0) / a.length;
 }
 
 solution([1,2,3], [4,5,6]);
