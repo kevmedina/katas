@@ -10,7 +10,14 @@
 // [-1, 0], [0, -1]                  -->   1   because (1 + 1) / 2
 
 const solution = function(firstArray, secondArray) {
-    
+    // Solution 1
+    let absDiff =  firstArray.map((elem, i) => {
+        return Math.pow(Math.abs(elem - secondArray[i]), 2);
+    })
+    let sum = absDiff.reduce((prev, current) => {
+        return prev + current;
+    })
+    return sum/absDiff.length;
 }
 
 solution([1,2,3], [4,5,6]);
