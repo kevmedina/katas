@@ -12,14 +12,21 @@
 // ["a","b","c","d","f"] -> "e"
 // ["O","Q","R","S"] -> "P"
 
-function findTheMissingLetter(arr) {
-    // Solution 1
-    for(let i = 0; i < arr.length; i++) {
-        let currentCharCode = arr[i].charCodeAt(0);
-        if(currentCharCode + 1 !== arr[i + 1].charCodeAt(0)){
-            return String.fromCharCode(currentCharCode + 1);
-        }
-    }
-}
+// Solution 1
+// function findTheMissingLetter(arr) {
+//     for(let i = 0; i < arr.length; i++) {
+//         let currentCharCode = arr[i].charCodeAt(0);
+//         if(currentCharCode + 1 !== arr[i + 1].charCodeAt(0)){
+//             return String.fromCharCode(currentCharCode + 1);
+//         }
+//     }
+// }
+
+// Solution 2
+const findTheMissingLetter = (arr) => {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const start = alphabet.indexOf(arr[0]);
+    return alphabet.slice(start, start + arr.length).find(el => !arr.includes(el));
+  };
 
 console.log(findTheMissingLetter(["a","b","c","d","f"]));
