@@ -12,6 +12,14 @@
 // ["a","b","c","d","f"] -> "e"
 // ["O","Q","R","S"] -> "P"
 
-function findTheMissingLetter() {
-    
+function findTheMissingLetter(arr) {
+    // Solution 1
+    for(let i = 0; i < arr.length; i++) {
+        let currentCharCode = arr[i].charCodeAt(0);
+        if(currentCharCode + 1 !== arr[i + 1].charCodeAt(0)){
+            return String.fromCharCode(currentCharCode + 1);
+        }
+    }
 }
+
+console.log(findTheMissingLetter(["a","b","c","d","f"]));
