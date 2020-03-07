@@ -5,11 +5,39 @@
 // For example, given the following list:
 
 const list1 = [
-  { first_name: 'Noah', last_name: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
-  { first_name: 'Maia', last_name: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
-  { first_name: 'Shufen', last_name: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
-  { first_name: 'Sumayah', last_name: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
-]
+  {
+    first_name: "Noah",
+    last_name: "M.",
+    country: "Switzerland",
+    continent: "Europe",
+    age: 19,
+    language: "JavaScript"
+  },
+  {
+    first_name: "Maia",
+    last_name: "S.",
+    country: "Tahiti",
+    continent: "Oceania",
+    age: 28,
+    language: "JavaScript"
+  },
+  {
+    first_name: "Shufen",
+    last_name: "L.",
+    country: "Taiwan",
+    continent: "Asia",
+    age: 35,
+    language: "HTML"
+  },
+  {
+    first_name: "Sumayah",
+    last_name: "M.",
+    country: "Tajikistan",
+    continent: "Asia",
+    age: 30,
+    language: "CSS"
+  }
+];
 // your function should return number 1.
 
 // If, there are no JavaScript developers from Europe then your function should return 0.
@@ -20,16 +48,25 @@ const list1 = [
 // All data will always be valid and uniform as in the example above.
 
 // Soultion 1
-function countDevelopers(list) {
-    // your awesome code here :)
-    let count = 0;
-    for(let i = 0; i < list.length; i++) {
-        let developer = list[i];
-        if(developer.continent === 'Europe' && developer.language === 'JavaScript') {
-            count++;
-        }
-    }
-    return count;
-  }
+// function countDevelopers(list) {
+//   your awesome code here :)
+//   let count = 0;
+//   for (let i = 0; i < list.length; i++) {
+//     let developer = list[i];
+//     if (
+//       developer.continent === "Europe" &&
+//       developer.language === "JavaScript"
+//     ) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
 
-  console.log(countDevelopers(list1));
+// Solution 2
+function countDevelopers(list) {
+  return list.filter(x => x.continent == "Europe" && x.language == "JavaScript")
+    .length;
+}
+
+console.log(countDevelopers(list1));
