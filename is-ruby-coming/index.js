@@ -31,4 +31,10 @@ function isRubyComing(list) {
   return rubyDev;
 }
 
+// Solution 3
+function isRubyComing(list) {
+  let rubyDev = list.filter(lang => lang.language === "Ruby").length;
+  return rubyDev >= 1 ? true : false;
+}
+
 console.log(isRubyComing(list1));
