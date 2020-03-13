@@ -43,7 +43,17 @@ function isSameLanguage(list) {
 
 // Solution 2
 function isSameLanguage(list) {
-    return list.every((d, i, arr) => d.language === arr[0].language);
+  return list.every((d, i, arr) => d.language === arr[0].language);
+}
+
+// Solution 3
+function isSameLanguage(list) {
+  for (var i = 0; i < list.length; i++) {
+    if (list[0].language !== list[i].language) {
+      return false;
+    }
   }
+  return true;
+}
 
 console.log(isSameLanguage(list1));
