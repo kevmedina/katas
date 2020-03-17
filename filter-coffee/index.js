@@ -19,4 +19,10 @@ const search = (budget, prices) => {
   return budgetArray.sort((a, b) => a - b).join();
 }
 
+// Solution 2
+let search = (budget, prices) => prices
+    .filter(p => p <= budget)
+    .sort((a, b) => a - b)
+    .join(',');
+
 console.log(search(14, [7, 3, 23, 9, 14, 20, 7]));
