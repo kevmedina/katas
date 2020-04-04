@@ -24,4 +24,13 @@ function spinWords(words) {
     .join(" ");
 }
 
+// Solution 3 (Another great method)
+function spinWords(string) {
+  return string.replace(/\w{5,}/g, function (w) {
+    return w.split("").reverse().join("");
+  });
+}
+
 console.log(spinWords("This is another test"));
+console.log(spinWords("Welcome to another practice kata"));
+console.log(spinWords("Wake up eat code and repeat"));
