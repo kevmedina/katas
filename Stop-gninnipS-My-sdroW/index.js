@@ -3,15 +3,25 @@
 // Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw" spinWords( "This is a test") => returns "This is a test" spinWords( "This is another test" )=> returns "This is rehtona test"
 
 // Soultion 1
-function spinWords(str){
-    //TODO Have fun :)
-    const arrOfWords = str.split(" ");
-    for(let i = 0; i < arrOfWords.length; i++){
-      if(arrOfWords[i].length >= 5){
-       arrOfWords[i] = arrOfWords[i].split("").reverse().join("");
-      }
+function spinWords(str) {
+  //TODO Have fun :)
+  const arrOfWords = str.split(" ");
+  for (let i = 0; i < arrOfWords.length; i++) {
+    if (arrOfWords[i].length >= 5) {
+      arrOfWords[i] = arrOfWords[i].split("").reverse().join("");
     }
-    return arrOfWords.toString().replace(/,/g, ' ')
   }
+  return arrOfWords.toString().replace(/,/g, " ");
+}
 
-  console.log(spinWords('This is another test'));
+// Solution 2 (BEST Practice)
+function spinWords(words) {
+  return words
+    .split(" ")
+    .map(function (word) {
+      return word.length > 4 ? word.split("").reverse().join("") : word;
+    })
+    .join(" ");
+}
+
+console.log(spinWords("This is another test"));
